@@ -1,26 +1,72 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Brand colours */
+  --color-black:     #0a0a0a;
+  --color-white:     #fafafa;
+  --color-grey-950:  #0f0f0f;
+  --color-grey-900:  #111111;
+  --color-grey-800:  #1a1a1a;
+  --color-grey-700:  #2a2a2a;
+  --color-grey-600:  #3d3d3d;
+  --color-grey-400:  #777777;
+  --color-grey-300:  #aaaaaa;
+  --color-grey-200:  #d4d4d4;
+  --color-grey-100:  #ebebeb;
+  --color-silver:    #c0c0c0;
+
+  /* Typography */
+  --font-display: var(--font-cormorant), 'Georgia', serif;
+  --font-body:    var(--font-inter), 'Helvetica Neue', sans-serif;
+
+  /* Section rhythm */
+  --section-padding: 7rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  --background: #0a0a0a;
+  --foreground: #fafafa;
+}
+
+/* ─── Base ─────────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+  background: var(--background);
+  color: var(--foreground);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* ─── Custom scrollbar ─────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+::-webkit-scrollbar-thumb {
+  background: #3d3d3d;
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #777777;
+}
+
+/* ─── Text selection ───────────────────────────────────── */
+::selection {
+  background: #fafafa;
+  color: #0a0a0a;
+}
+
+/* ─── Focus ring ───────────────────────────────────────── */
+:focus-visible {
+  outline: 1px solid #c0c0c0;
+  outline-offset: 3px;
 }
