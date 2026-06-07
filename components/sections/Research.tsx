@@ -11,28 +11,32 @@ export default function Research() {
 
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-12 lg:gap-24 items-start">
           {/* Award callout */}
-          <div className="space-y-6">
-            <div className="border border-grey-700 p-8 relative">
-              <div className="absolute -top-3 left-6 bg-grey-950 px-2">
-                <Award size={14} className="text-silver" />
+          <div className="space-y-5">
+            {/* Award — silver accent treatment */}
+            <div className="relative border border-silver/20 bg-grey-900/60 p-8 overflow-hidden group hover:border-silver/40 transition-colors duration-500">
+              {/* Shimmer line at top */}
+              <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-silver/60 to-transparent" />
+              <div className="flex items-start gap-3 mb-4">
+                <Award size={14} className="text-silver mt-0.5 flex-shrink-0" />
+                <p className="text-[10px] tracking-[0.35em] uppercase text-silver/70 font-body">
+                  Recognition
+                </p>
               </div>
-              <p className="text-xs tracking-[0.3em] uppercase text-grey-500 font-body mb-3">
-                Recognition
-              </p>
               <p className="font-display text-xl font-light text-white leading-snug">
                 {PUBLICATION.award}
               </p>
             </div>
 
-            <div className="border border-grey-800 p-8">
-              <p className="text-xs tracking-[0.3em] uppercase text-grey-500 font-body mb-3">
-                Conference
+            {/* Conference */}
+            <div className="border border-grey-800 p-8 hover:border-grey-700 transition-colors duration-300">
+              <p className="text-[10px] tracking-[0.35em] uppercase text-grey-600 font-body mb-3">
+                Venue
               </p>
-              <p className="font-body text-sm text-grey-300 leading-relaxed">
+              <p className="font-body text-sm text-grey-400 leading-relaxed mb-4">
                 {PUBLICATION.conference}
               </p>
-              <p className="font-display text-3xl font-light text-grey-700 mt-3">
-                {PUBLICATION.year}
+              <p className="font-display text-4xl font-light text-grey-700">
+                IEEE · {PUBLICATION.year}
               </p>
             </div>
           </div>

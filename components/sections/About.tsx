@@ -43,17 +43,17 @@ export default function About() {
             </div>
 
             {/* Stats */}
-            <div className="mt-12 grid grid-cols-3 gap-8 border-t border-grey-800 pt-10">
+            <div className="mt-12 grid grid-cols-3 gap-6 border-t border-grey-800 pt-10">
               {[
                 { value: "3+", label: "Years at IFS R&D" },
                 { value: "160+", label: "Students taught" },
-                { value: "5", label: "IFS components shipped" },
-              ].map((stat) => (
-                <div key={stat.label}>
-                  <p className="font-display text-3xl md:text-4xl font-light text-white mb-1">
+                { value: "5", label: "IFS components" },
+              ].map((stat, i) => (
+                <div key={stat.label} className="group">
+                  <p className="font-display text-4xl md:text-5xl font-light text-white mb-2 leading-none">
                     {stat.value}
                   </p>
-                  <p className="text-xs tracking-[0.1em] uppercase text-grey-500 font-body">
+                  <p className="text-[10px] tracking-[0.2em] uppercase text-grey-600 font-body group-hover:text-grey-400 transition-colors duration-300">
                     {stat.label}
                   </p>
                 </div>
