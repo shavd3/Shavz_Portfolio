@@ -47,7 +47,7 @@ export default function About() {
               {[
                 { value: "3+", label: "Years at IFS R&D" },
                 { value: "160+", label: "Students taught" },
-                { value: "5", label: "IFS components" },
+                { value: "50+", label: "Features shipped" },
               ].map((stat, i) => (
                 <div key={stat.label} className="group">
                   <p className="font-display text-4xl md:text-5xl font-light text-white mb-2 leading-none">

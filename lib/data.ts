@@ -7,6 +7,7 @@ export const NAV_LINKS: NavLink[] = [
   { label: "Projects", href: "#projects" },
   { label: "Research", href: "#research" },
   { label: "Teaching", href: "#teaching" },
+  { label: "Leadership", href: "#leadership" },
   { label: "Photography", href: "#photography" },
   { label: "Contact", href: "#contact" },
 ];
@@ -69,10 +70,10 @@ export const EXPERIENCES: Experience[] = [
 export const PROJECTS: Project[] = [
   {
     id: "saas-ecommerce",
-    title: "Multi-Tenant E-Commerce SaaS Platform",
+    title: "Multi-Tenant E-Commerce SaaS",
     description:
       "Architected a white-label e-commerce platform as a Turborepo monorepo with ORM-level tenant isolation, Docker Compose local environment, GitHub Actions CI/CD pipeline, and cloud infrastructure across Neon, Upstash, Cloudflare R2, and Vercel.",
-    tech: ["Next.js 15", "React", "TypeScript", "PostgreSQL", "Prisma", "Stripe", "Docker", "GitHub Actions", "Turborepo"],
+    tech: ["Next.js 15", "TypeScript", "PostgreSQL", "Prisma", "Stripe", "Docker", "Turborepo"],
     featured: true,
   },
   {
@@ -81,7 +82,27 @@ export const PROJECTS: Project[] = [
     description:
       "Multi-model deep learning pipeline for cryptocurrency trend prediction using candlestick chart image classification combined with LSTM time-series modelling, with Grad-CAM explainability for visual interpretation of model decisions.",
     tech: ["Python", "ResNet50", "LSTM", "CNN", "Grad-CAM", "PyTorch"],
-    highlight: "IEEE Published · Bronze Research Excellence Award",
+    highlight: "IEEE Published · Bronze Research Award",
+    githubUrl: "https://ieeexplore.ieee.org/document/10857799",
+    featured: true,
+  },
+  {
+    id: "eventz",
+    title: "EventZ",
+    description:
+      "Full-stack event planning platform built from my own experience coordinating events — visual timeline management, day-of scheduling, task delegation, budget tracking, and multi-venue guest management with real-time collaboration.",
+    tech: ["Next.js 16", "TypeScript", "Supabase", "PostgreSQL", "Tailwind CSS"],
+    githubUrl: "https://github.com/shavd3/EventZ",
+    liveUrl: "https://event-z-psi.vercel.app",
+    featured: true,
+  },
+  {
+    id: "lms-admin",
+    title: "LMS Admin Portal",
+    description:
+      "Freelance admin portal for managing student records, course enrolments, attendance, and academic data for a learning management system. Clean, role-based dashboard built for day-to-day academic administration.",
+    tech: ["Next.js 16", "TypeScript", "Supabase", "Tailwind CSS", "PostgreSQL"],
+    githubUrl: "https://github.com/shavd3/LMS_Admin",
     featured: true,
   },
   {
@@ -136,6 +157,7 @@ export const PUBLICATION: Publication = {
   award: "Bronze Research Excellence Award — Informatics Institute of Technology",
   abstract:
     "Investigated a novel approach to cryptocurrency market prediction by treating candlestick charts as image classification problems. The pipeline combined ResNet50 for pattern recognition, LSTM for temporal modelling, and Grad-CAM for model explainability — providing visual justification for predictions that bridges the gap between deep learning and interpretable finance.",
+  url: "https://ieeexplore.ieee.org/document/10857799",
 };
 
 export const TEACHING_MODULES: TeachingModule[] = [
@@ -154,23 +176,98 @@ export const TEACHING_STATS = {
   affiliation: "Affiliated with University of Westminster, UK",
 };
 
+export interface ExtracurricularItem {
+  id: string;
+  title: string;
+  org: string;
+  period: string;
+  description: string;
+  category: "Leadership" | "Community" | "Achievement" | "Creative";
+}
+
+export const EXTRACURRICULAR: ExtracurricularItem[] = [
+  {
+    id: "head-prefect",
+    title: "Head Prefect",
+    org: "St. Sebastian's College, Moratuwa",
+    period: "2019",
+    description: "Led the school prefect board — responsible for student discipline, school events, and representing the student body at official functions.",
+    category: "Leadership",
+  },
+  {
+    id: "batch-president",
+    title: "President — Batch of 2020",
+    org: "St. Sebastian's College, Moratuwa",
+    period: "2019 – 2020",
+    description: "Elected batch president, coordinating class activities, representing peers in school administration, and organising batch-level events.",
+    category: "Leadership",
+  },
+  {
+    id: "event-planning",
+    title: "Event Planning & Coordination",
+    org: "Independent",
+    period: "Ongoing",
+    description: "Plan and coordinate events end-to-end — from concept and logistics to execution. Built EventZ, a full-stack platform, directly out of this experience.",
+    category: "Creative",
+  },
+  {
+    id: "rotaract",
+    title: "Public Relations Director",
+    org: "Rotaract Club, IIT",
+    period: "2021 – 2023",
+    description: "Managed public relations and communications for the IIT Rotaract Club, coordinating outreach campaigns and community service events.",
+    category: "Community",
+  },
+  {
+    id: "entrepreneurship",
+    title: "Member",
+    org: "Entrepreneurship Society, IIT",
+    period: "2021 – 2023",
+    description: "Active member of the IIT Entrepreneurship Society, participating in startup pitches, workshops, and networking events.",
+    category: "Community",
+  },
+  {
+    id: "hacktron",
+    title: "Semi-Finalist — Hacktron",
+    org: "Game Development Hackathon",
+    period: "2021",
+    description: "Reached the semi-finals of Hacktron, a competitive game development hackathon, delivering a playable prototype under time constraints.",
+    category: "Achievement",
+  },
+  {
+    id: "welfare",
+    title: "Welfare Committee Member",
+    org: "IFS R&D International (HCM Division)",
+    period: "2023",
+    description: "Part of the HCM division welfare committee — organising team events, celebrations, and employee engagement activities.",
+    category: "Community",
+  },
+];
+
 export const PHOTOS: Photo[] = [
-  { id: "ph-01", src: "/images/photography/01-canon-lens.jpg",       alt: "Canon EFS 18-55mm lens — a quiet morning at the desk", width: 800,  height: 1200, category: "Macro" },
-  { id: "ph-02", src: "/images/photography/02-tech-flatlay.jpg",     alt: "Tech flatlay — Canon lens, phone, and Dell hub",       width: 1024, height: 1366, category: "Still Life" },
-  { id: "ph-03", src: "/images/photography/03-calla-lily.jpg",       alt: "Calla lily in soft morning light",                    width: 800,  height: 1200, category: "Macro" },
-  { id: "ph-04", src: "/images/photography/04-night-street.jpg",     alt: "Colombo night street — golden hour fading into blue",  width: 768,  height: 1024, category: "Street" },
-  { id: "ph-05", src: "/images/photography/05-train-promenade.jpg",  alt: "Colombo Fort station promenade — dramatic storm sky",  width: 768,  height: 1024, category: "Street" },
-  { id: "ph-06", src: "/images/photography/06-rooftop-sunset.jpg",   alt: "ITC Ratnadipa Colombo — rooftop at golden hour",      width: 768,  height: 1024, category: "Architecture" },
-  { id: "ph-07", src: "/images/photography/07-city-skyline.jpg",     alt: "Colombo skyline by night — Lotus Tower and Shangri-La", width: 1024, height: 768,  category: "Cityscape" },
-  { id: "ph-08", src: "/images/photography/08-train-overhead.jpg",   alt: "Overhead view of trains at Maradana station",         width: 768,  height: 1024, category: "Transport" },
-  { id: "ph-09", src: "/images/photography/09-sea-from-train.jpg",   alt: "Indian Ocean through a train window — coastal Sri Lanka", width: 768, height: 1024, category: "Landscape" },
-  { id: "ph-10", src: "/images/photography/10-port-city.jpg",        alt: "City of Colombo — Port City and a tuk-tuk at dawn",   width: 1024, height: 768,  category: "Architecture" },
-  { id: "ph-11", src: "/images/photography/11-blood-moon.jpg",       alt: "Lunar eclipse — blood moon over Sri Lanka",           width: 768,  height: 1024, category: "Astrophotography" },
-  { id: "ph-12", src: "/images/photography/12-colonial-building.jpg", alt: "Colonial-era building — low angle with afternoon sun", width: 768, height: 1024, category: "Architecture" },
+  { id: "ph-01", src: "/images/photography/01-canon-lens.jpg",        alt: "Canon EFS 18-55mm lens — a quiet morning at the desk",       width: 800,  height: 1200, category: "Macro" },
+  { id: "ph-02", src: "/images/photography/02-tech-flatlay.jpg",      alt: "Tech flatlay — Canon lens, phone, and Dell hub",              width: 1024, height: 1366, category: "Still Life" },
+  { id: "ph-03", src: "/images/photography/03-calla-lily.jpg",        alt: "Calla lily in soft morning light",                           width: 800,  height: 1200, category: "Macro" },
+  { id: "ph-04", src: "/images/photography/04-night-street.jpg",      alt: "Colombo night street — golden hour fading into blue",         width: 768,  height: 1024, category: "Street" },
+  { id: "ph-05", src: "/images/photography/05-train-promenade.jpg",   alt: "Colombo Fort station promenade — dramatic storm sky",         width: 768,  height: 1024, category: "Street" },
+  { id: "ph-06", src: "/images/photography/06-rooftop-sunset.jpg",    alt: "ITC Ratnadipa Colombo — rooftop at golden hour",             width: 768,  height: 1024, category: "Architecture" },
+  { id: "ph-07", src: "/images/photography/07-city-skyline.jpg",      alt: "Colombo skyline by night — Lotus Tower and Shangri-La",      width: 1024, height: 768,  category: "Cityscape" },
+  { id: "ph-08", src: "/images/photography/08-train-overhead.jpg",    alt: "Overhead view of trains at Maradana station",                width: 768,  height: 1024, category: "Transport" },
+  { id: "ph-09", src: "/images/photography/09-sea-from-train.jpg",    alt: "Indian Ocean through a train window — coastal Sri Lanka",    width: 768,  height: 1024, category: "Landscape" },
+  { id: "ph-10", src: "/images/photography/10-port-city.jpg",         alt: "City of Colombo — Port City and a tuk-tuk at dawn",          width: 1024, height: 768,  category: "Architecture" },
+  { id: "ph-11", src: "/images/photography/11-blood-moon.jpg",        alt: "Lunar eclipse — blood moon over Sri Lanka",                  width: 768,  height: 1024, category: "Astrophotography" },
+  { id: "ph-12", src: "/images/photography/12-colonial-building.jpg", alt: "Colonial-era building — low angle with afternoon sun",       width: 768,  height: 1024, category: "Architecture" },
 ];
 
 export const CONTACT = {
+  fullName: "Shavin Dilsara Fernando",
   email: "shavin2001d@gmail.com",
+  emailIFS: "shavin.fernando@ifs.com",
+  emailIIT: "shavin.f@iit.ac.lk",
+  phone: "+94 77 359 2037",
   linkedin: "https://www.linkedin.com/in/shavin-fernando-d3",
   github: "https://github.com/shavd3",
+  instagram: "https://www.instagram.com/shav.___.d.___.3?igsh=MXF4ZHlwbWYyZnc1OQ==",
+  facebook: "https://www.facebook.com/share/14eCGioAAiK/",
+  photographyFb: "https://www.facebook.com/share/1CwPU4zU8B/",
 };

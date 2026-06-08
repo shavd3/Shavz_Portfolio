@@ -1,7 +1,7 @@
 import SectionWrapper from "@/components/ui/SectionWrapper";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { PUBLICATION } from "@/lib/data";
-import { Award, BookOpen } from "lucide-react";
+import { Award, BookOpen, ExternalLink } from "lucide-react";
 
 export default function Research() {
   return (
@@ -61,16 +61,28 @@ export default function Research() {
               {PUBLICATION.abstract}
             </p>
 
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-2 mb-8">
               {["Deep Learning", "ResNet50", "LSTM", "CNN", "Grad-CAM", "Explainable AI", "Cryptocurrency"].map((tag) => (
                 <span
                   key={tag}
-                  className="text-[10px] tracking-[0.15em] uppercase text-grey-600 border border-grey-800 px-3 py-1 font-body"
+                  className="text-[11px] text-grey-400 bg-grey-900 border border-grey-800 px-2.5 py-1 font-body rounded-sm"
                 >
                   {tag}
                 </span>
               ))}
             </div>
+
+            {PUBLICATION.url && (
+              <a
+                href={PUBLICATION.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 text-[11px] tracking-[0.25em] uppercase font-body border border-grey-700 text-grey-300 px-6 py-3 hover:border-silver hover:text-white transition-all duration-300 group"
+              >
+                <ExternalLink size={12} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
+                View on IEEE Xplore
+              </a>
+            )}
           </div>
         </div>
       </div>

@@ -7,6 +7,7 @@ import Skills from "@/components/sections/Skills";
 import Projects from "@/components/sections/Projects";
 import Research from "@/components/sections/Research";
 import Teaching from "@/components/sections/Teaching";
+import Leadership from "@/components/sections/Leadership";
 import Photography from "@/components/sections/Photography";
 import Contact from "@/components/sections/Contact";
 
@@ -22,6 +23,7 @@ export default function Home() {
         <Projects />
         <Research />
         <Teaching />
+        <Leadership />
         <Photography />
         <Contact />
       </main>

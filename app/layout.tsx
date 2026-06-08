@@ -16,11 +16,12 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Shavin Fernando — Software Engineer & Visiting Lecturer",
+  title: "Shavin Dilsara Fernando — Software Engineer & Visiting Lecturer",
   description:
     "Senior Software Engineer at IFS R&D International. Visiting Lecturer at IIT. Photographer. IEEE published researcher. Based in Sri Lanka.",
   keywords: [
     "Shavin Fernando",
+    "Shavin Dilsara Fernando",
     "Software Engineer",
     "IFS Cloud",
     "PL/SQL",
@@ -31,13 +32,13 @@ export const metadata: Metadata = {
     "Sri Lanka",
     "Portfolio",
   ],
-  authors: [{ name: "Shavin Fernando" }],
-  creator: "Shavin Fernando",
+  authors: [{ name: "Shavin Dilsara Fernando" }],
+  creator: "Shavin Dilsara Fernando",
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://shavin.dev",
-    title: "Shavin Fernando — Software Engineer & Visiting Lecturer",
+    title: "Shavin Dilsara Fernando — Software Engineer & Visiting Lecturer",
     description:
       "Senior Software Engineer at IFS R&D International. Visiting Lecturer at IIT. IEEE published researcher.",
     siteName: "Shavin Fernando",

@@ -56,7 +56,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
         {project.tech.map((t) => (
           <span
             key={t}
-            className="text-[10px] tracking-[0.12em] uppercase text-grey-700 font-body border-b border-grey-800 pb-px"
+            className="text-[11px] tracking-[0.08em] text-grey-400 font-body bg-grey-900 border border-grey-800 px-2 py-0.5 rounded-sm"
           >
             {t}
           </span>

@@ -3,27 +3,37 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, Send } from "lucide-react";
-import { GithubIcon, LinkedinIcon } from "@/components/ui/SocialIcons";
+import { GithubIcon, LinkedinIcon, InstagramIcon, FacebookIcon, PhoneIcon } from "@/components/ui/SocialIcons";
 import SectionWrapper from "@/components/ui/SectionWrapper";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { CONTACT } from "@/lib/data";
 import { cn } from "@/lib/utils";
 
+const inputClass =
+  "w-full bg-transparent border-b border-grey-700 px-0 py-3.5 text-sm text-white font-body placeholder:text-grey-700 focus:border-silver focus:outline-none transition-colors duration-300 tracking-wide";
+
 export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
-  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const [status, setStatus] = useState<"idle" | "sending" | "sent">("idle");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("sending");
-    // Placeholder — wire up to Resend / Formspree when ready
     await new Promise((r) => setTimeout(r, 1200));
     setStatus("sent");
   };
 
-  // Underline-style input: no box border, only bottom border + focus glow
-  const inputClass =
-    "w-full bg-transparent border-b border-grey-700 px-0 py-3.5 text-sm text-white font-body placeholder:text-grey-700 focus:border-silver focus:outline-none transition-colors duration-400 tracking-wide";
+  const contactLinks = [
+    { href: `mailto:${CONTACT.email}`,    icon: <Mail size={13} />,        label: CONTACT.email,      sub: "Personal" },
+    { href: `mailto:${CONTACT.emailIFS}`, icon: <Mail size={13} />,        label: CONTACT.emailIFS,   sub: "IFS R&D" },
+    { href: `mailto:${CONTACT.emailIIT}`, icon: <Mail size={13} />,        label: CONTACT.emailIIT,   sub: "IIT" },
+    { href: `tel:${CONTACT.phone.replace(/\s/g, "")}`, icon: <PhoneIcon size={13} />, label: CONTACT.phone, sub: "Mobile" },
+    { href: CONTACT.linkedin,    icon: <LinkedinIcon size={13} />,  label: "LinkedIn",         sub: "Profile",    external: true },
+    { href: CONTACT.github,      icon: <GithubIcon size={13} />,    label: "GitHub",           sub: "@shavd3",    external: true },
+    { href: CONTACT.instagram,   icon: <InstagramIcon size={13} />, label: "Instagram",        sub: "@shav.___.d.___.3", external: true },
+    { href: CONTACT.facebook,    icon: <FacebookIcon size={13} />,  label: "Facebook",         sub: "Personal",   external: true },
+    { href: CONTACT.photographyFb, icon: <FacebookIcon size={13} />, label: "Photography Page", sub: "Facebook",  external: true },
+  ];
 
   return (
     <SectionWrapper id="contact">
@@ -31,32 +41,33 @@ export default function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-32">
           {/* Left */}
           <div>
-            <SectionHeading label="08 — Contact" title={"Let's build\nsomething great."} />
+            <SectionHeading label="09 — Contact" title={"Let's build\nsomething great."} />
 
-            <p className="font-body text-grey-500 text-sm leading-loose mb-12 max-w-sm">
+            <p className="font-body text-grey-500 text-sm leading-loose mb-10 max-w-sm">
               Whether you have a project in mind, want to discuss a role, or are looking for a
               lecturer — I&apos;d love to hear from you.
             </p>
 
-            <div className="space-y-6">
-              {[
-                { href: `mailto:${CONTACT.email}`, icon: <Mail size={13} />, label: CONTACT.email },
-                { href: CONTACT.linkedin, icon: <LinkedinIcon size={13} />, label: "linkedin.com/in/shavin-fernando-d3", external: true },
-                { href: CONTACT.github, icon: <GithubIcon size={13} />, label: "github.com/shavd3", external: true },
-              ].map(({ href, icon, label, external }) => (
+            <div className="space-y-3">
+              {contactLinks.map(({ href, icon, label, sub, external }) => (
                 <a
-                  key={label}
+                  key={label + sub}
                   href={href}
                   target={external ? "_blank" : undefined}
                   rel={external ? "noopener noreferrer" : undefined}
-                  className="flex items-center gap-5 text-grey-500 hover:text-white transition-colors duration-300 group"
+                  className="flex items-center gap-4 text-grey-500 hover:text-white transition-colors duration-300 group py-1"
                 >
-                  <div className="w-9 h-9 border border-grey-800 group-hover:border-grey-600 flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:bg-grey-900">
+                  <div className="w-8 h-8 border border-grey-800 group-hover:border-grey-600 flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:bg-grey-900">
                     {icon}
                   </div>
-                  <span className="font-body text-sm group-hover:text-grey-200 transition-colors duration-300">
-                    {label}
-                  </span>
+                  <div>
+                    <p className="font-body text-sm group-hover:text-grey-200 transition-colors duration-300 leading-tight">
+                      {label}
+                    </p>
+                    <p className="text-[10px] tracking-[0.15em] uppercase text-grey-700 font-body">
+                      {sub}
+                    </p>
+                  </div>
                 </a>
               ))}
             </div>
@@ -86,52 +97,25 @@ export default function Contact() {
             ) : (
               <form onSubmit={handleSubmit} className="space-y-8">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-                  <div className="relative">
-                    <input
-                      type="text"
-                      placeholder="Name"
-                      required
-                      value={form.name}
-                      onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
-                      className={inputClass}
-                    />
-                  </div>
-                  <div className="relative">
-                    <input
-                      type="email"
-                      placeholder="Email"
-                      required
-                      value={form.email}
-                      onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))}
-                      className={inputClass}
-                    />
-                  </div>
+                  <input type="text" placeholder="Name" required value={form.name}
+                    onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
+                    className={inputClass} />
+                  <input type="email" placeholder="Email" required value={form.email}
+                    onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))}
+                    className={inputClass} />
                 </div>
-                <div className="relative">
-                  <textarea
-                    placeholder="Your message"
-                    required
-                    rows={6}
-                    value={form.message}
-                    onChange={(e) => setForm((f) => ({ ...f, message: e.target.value }))}
-                    className={cn(inputClass, "resize-none")}
-                  />
-                </div>
+                <textarea placeholder="Your message" required rows={6} value={form.message}
+                  onChange={(e) => setForm((f) => ({ ...f, message: e.target.value }))}
+                  className={cn(inputClass, "resize-none")} />
                 <button
                   type="submit"
                   disabled={status === "sending"}
-                  className="group w-full flex items-center justify-center gap-3 border border-white text-white text-[11px] tracking-[0.3em] uppercase font-body py-4 hover:bg-white hover:text-black transition-all duration-400 disabled:opacity-40 disabled:cursor-not-allowed"
+                  className="group w-full flex items-center justify-center gap-3 border border-white text-white text-[11px] tracking-[0.3em] uppercase font-body py-4 hover:bg-white hover:text-black transition-all duration-300 disabled:opacity-40"
                 >
                   {status === "sending" ? (
-                    <>
-                      <span className="w-3 h-3 border border-current border-t-transparent rounded-full animate-spin" />
-                      Sending…
-                    </>
+                    <><span className="w-3 h-3 border border-current border-t-transparent rounded-full animate-spin" />Sending…</>
                   ) : (
-                    <>
-                      <Send size={12} className="group-hover:-rotate-12 transition-transform duration-300" />
-                      Send Message
-                    </>
+                    <><Send size={12} className="group-hover:-rotate-12 transition-transform duration-300" />Send Message</>
                   )}
                 </button>
               </form>
