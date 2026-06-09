@@ -15,14 +15,14 @@ export default function About() {
               <p>
                 I&apos;m a Senior Software Engineer at{" "}
                 <span className="text-white">IFS R&D International</span>, where I build
-                enterprise-grade features across the full IFS Cloud stack — from Aurena client
+                enterprise-grade features across the full IFS Cloud stack, from Aurena client
                 pages and projection APIs to PL/SQL business logic, AI/ML integrations, and
                 report pipelines. Three years in, I&apos;ve shipped across five components and
                 presented to engineering teams spanning the US, Germany, and Sweden.
               </p>
               <p>
                 Alongside engineering, I teach as a{" "}
-                <span className="text-white">Visiting Lecturer at IIT</span> — an institution
+                <span className="text-white">Visiting Lecturer at IIT,</span> an institution
                 affiliated with the University of Westminster, UK. I run 4–6 classes a week
                 across Database Systems, Java, Python, Web Development, and Client-Server
                 Architecture, and mentor final-year students through dissertations and mock
@@ -32,11 +32,11 @@ export default function About() {
                 I hold a{" "}
                 <span className="text-white">BEng in Software Engineering with First Class Honours</span>{" "}
                 and have published research in IEEE on explainable deep learning applied to
-                cryptocurrency trend prediction — work recognised with a Bronze Research
+                cryptocurrency trend prediction, recognised with a Bronze Research
                 Excellence Award.
               </p>
               <p>
-                Away from screens, I&apos;m a photographer and event planner — disciplines that
+                Away from screens, I&apos;m a photographer and event planner, disciplines that
                 have sharpened how I think about composition, attention to detail, and
                 delivering experiences that feel considered.
               </p>

@@ -25,7 +25,7 @@ export default function Teaching() {
 
             <p className="font-body text-grey-300 text-sm leading-relaxed mb-10">
               As a Visiting Lecturer, I teach across five modules to students from first year through
-              to final year. My approach combines rigorous fundamentals with real-world context —
+              to final year. My approach combines rigorous fundamentals with real-world context,
               drawing directly from my professional experience to make enterprise-level concepts
               accessible and relevant.
             </p>

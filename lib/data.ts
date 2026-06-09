@@ -20,14 +20,14 @@ export const EXPERIENCES: Experience[] = [
     period: "June 2024 – Present",
     current: true,
     description:
-      "CRM, Service & Asset Management division — building enterprise features across all layers of IFS Cloud.",
+      "CRM, Service & Asset Management division, building enterprise features across all layers of IFS Cloud.",
     bullets: [
-      "Developed Aurena client pages (.client) and reusable fragments (.fragment) across CRM, RMCOM, RMPANL, and Order components — building new pages from scratch and extending existing ones.",
+      "Developed Aurena client pages (.client) and reusable fragments (.fragment) across CRM, RMCOM, RMPANL, and Order components, building new pages from scratch and extending existing ones.",
       "Designed and implemented IFS Cloud projections defining entity overrides, CRUD endpoints, custom actions, and functions consumed by Aurena clients and external integrations.",
       "Built end-to-end Microsoft Teams CRM integration: OAuth client secret encryption (Java EE/AES), dynamic Teams app manifest ZIP generation, AI-powered meeting briefing via LLM recipe, and meeting summary persistence.",
-      "Extended IFS AI Copilot with a Customer Evaluation capability — built the full evaluation data layer (schema, PL/SQL, prompt recipes, service projection) end-to-end.",
+      "Extended IFS AI Copilot with a Customer Evaluation capability: built the full evaluation data layer (schema, PL/SQL, prompt recipes, service projection) end-to-end.",
       "Authored GPT-4o prompt recipes (.ins) for meeting summarisation, guided next step recommendations, and AI Copilot customer evaluations.",
-      "Designed and built the Business Opportunity PDF report from scratch using IFS Report Studio Designer — hierarchical 13-block data model with ~90 columns.",
+      "Designed and built the Business Opportunity PDF report from scratch using IFS Report Studio Designer, with a hierarchical 13-block data model spanning ~90 columns.",
       "Learned and documented EBR implementation patterns, delivered sessions to engineers, and created an automated EBR PR Review agent on Bitbucket.",
       "Delivered KT sessions and technical presentations to 30–50 engineers across teams in the US, Germany, and Sweden.",
       "Contributing to IFS's next-generation Kairos platform built on Go (backend) and React (frontend).",
@@ -56,7 +56,7 @@ export const EXPERIENCES: Experience[] = [
     period: "July 2022 – September 2023",
     current: false,
     description:
-      "Human Capital Management module — building enterprise HCM features and developing deep IFS Cloud fundamentals.",
+      "Human Capital Management module, building enterprise HCM features and developing deep IFS Cloud fundamentals.",
     bullets: [
       "Developed IFS Cloud application features using PL/SQL and IFS frameworks within the HCM module.",
       "Implemented API-based test automation scripts and PL/SQL unit tests for regression coverage.",
@@ -90,10 +90,9 @@ export const PROJECTS: Project[] = [
     id: "eventz",
     title: "EventZ",
     description:
-      "Full-stack event planning platform built from my own experience coordinating events — visual timeline management, day-of scheduling, task delegation, budget tracking, and multi-venue guest management with real-time collaboration.",
+      "Full-stack event planning platform built from my own experience coordinating events. Features visual timeline management, day-of scheduling, task delegation, budget tracking, and multi-venue guest management.",
     tech: ["Next.js 16", "TypeScript", "Supabase", "PostgreSQL", "Tailwind CSS"],
     githubUrl: "https://github.com/shavd3/EventZ",
-    liveUrl: "https://event-z-psi.vercel.app",
     featured: true,
   },
   {
@@ -154,9 +153,9 @@ export const PUBLICATION: Publication = {
   title: "Image-Based Cryptocurrency Trend Prediction with Explainable Deep Learning",
   conference: "9th International Conference on Information Technology Research (ICITR 2024)",
   year: 2024,
-  award: "Bronze Research Excellence Award — Informatics Institute of Technology",
+  award: "Bronze Research Excellence Award, Informatics Institute of Technology",
   abstract:
-    "Investigated a novel approach to cryptocurrency market prediction by treating candlestick charts as image classification problems. The pipeline combined ResNet50 for pattern recognition, LSTM for temporal modelling, and Grad-CAM for model explainability — providing visual justification for predictions that bridges the gap between deep learning and interpretable finance.",
+    "Investigated a novel approach to cryptocurrency market prediction by treating candlestick charts as image classification problems. The pipeline combined ResNet50 for pattern recognition, LSTM for temporal modelling, and Grad-CAM for model explainability, providing visual justification for predictions that bridges the gap between deep learning and interpretable finance.",
   url: "https://ieeexplore.ieee.org/document/10857799",
 };
 
@@ -191,7 +190,7 @@ export const EXTRACURRICULAR: ExtracurricularItem[] = [
     title: "Head Prefect",
     org: "St. Sebastian's College, Moratuwa",
     period: "2019",
-    description: "Led the school prefect board — responsible for student discipline, school events, and representing the student body at official functions.",
+    description: "Led the school prefect board, responsible for student discipline, school events, and representing the student body at official functions.",
     category: "Leadership",
   },
   {
@@ -207,7 +206,7 @@ export const EXTRACURRICULAR: ExtracurricularItem[] = [
     title: "Event Planning & Coordination",
     org: "Independent",
     period: "Ongoing",
-    description: "Plan and coordinate events end-to-end — from concept and logistics to execution. Built EventZ, a full-stack platform, directly out of this experience.",
+    description: "Plan and coordinate events end-to-end, from concept and logistics to execution. Built EventZ, a full-stack platform, directly out of this experience.",
     category: "Creative",
   },
   {
@@ -239,7 +238,7 @@ export const EXTRACURRICULAR: ExtracurricularItem[] = [
     title: "Welfare Committee Member",
     org: "IFS R&D International (HCM Division)",
     period: "2023",
-    description: "Part of the HCM division welfare committee — organising team events, celebrations, and employee engagement activities.",
+    description: "Part of the HCM division welfare committee, organising team events, celebrations, and employee engagement activities.",
     category: "Community",
   },
 ];

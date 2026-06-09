@@ -97,9 +97,9 @@ export default function Hero() {
           transition={ITEM_TRANSITION}
           className="font-display text-xl md:text-2xl text-grey-400 font-light italic max-w-lg leading-relaxed mb-12"
         >
-          Building enterprise systems by day.
+          Engineer by trade.
           <br />
-          Capturing moments by night.
+          Creator at heart.
         </motion.p>
 
         {/* Thin divider */}

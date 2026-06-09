@@ -46,7 +46,7 @@ export default function Photography() {
             className="mb-0"
           />
           <p className="font-body text-sm text-grey-500 max-w-xs leading-relaxed">
-            Photography has sharpened my eye for composition, light, and the decisive moment —
+            Photography has sharpened my eye for composition, light, and the decisive moment,
             instincts that carry directly into my engineering work.
           </p>
         </div>

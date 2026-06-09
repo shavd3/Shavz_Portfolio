@@ -46,12 +46,12 @@ export default function Navbar() {
           </a>
 
           {/* Desktop nav */}
-          <ul className="hidden md:flex items-center gap-8">
+          <ul className="hidden lg:flex items-center gap-5">
             {NAV_LINKS.map((link) => (
               <li key={link.href}>
                 <button
                   onClick={() => handleNavClick(link.href)}
-                  className="text-xs tracking-[0.2em] uppercase text-grey-300 hover:text-white transition-colors duration-300 font-body"
+                  className="text-[10px] tracking-[0.15em] uppercase text-grey-400 hover:text-white transition-colors duration-300 font-body"
                 >
                   {link.label}
                 </button>
@@ -65,15 +65,15 @@ export default function Navbar() {
               href="/cv/Shavin_Fernando_CV.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden md:flex items-center gap-2 text-xs tracking-[0.2em] uppercase border border-grey-600 text-grey-200 hover:border-white hover:text-white px-4 py-2 transition-all duration-300 font-body"
+              className="hidden lg:flex items-center gap-2 text-[10px] tracking-[0.15em] uppercase border border-grey-700 text-grey-300 hover:border-white hover:text-white px-3 py-1.5 transition-all duration-300 font-body"
             >
-              <Download size={12} />
+              <Download size={11} />
               CV
             </a>
 
             <button
               onClick={() => setMenuOpen((v) => !v)}
-              className="md:hidden text-grey-300 hover:text-white transition-colors"
+              className="lg:hidden text-grey-300 hover:text-white transition-colors"
               aria-label="Toggle menu"
             >
               {menuOpen ? <X size={20} /> : <Menu size={20} />}

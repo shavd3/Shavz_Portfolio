@@ -23,17 +23,6 @@ export default function Contact() {
     setStatus("sent");
   };
 
-  const contactLinks = [
-    { href: `mailto:${CONTACT.email}`,    icon: <Mail size={13} />,        label: CONTACT.email,      sub: "Personal" },
-    { href: `mailto:${CONTACT.emailIFS}`, icon: <Mail size={13} />,        label: CONTACT.emailIFS,   sub: "IFS R&D" },
-    { href: `mailto:${CONTACT.emailIIT}`, icon: <Mail size={13} />,        label: CONTACT.emailIIT,   sub: "IIT" },
-    { href: `tel:${CONTACT.phone.replace(/\s/g, "")}`, icon: <PhoneIcon size={13} />, label: CONTACT.phone, sub: "Mobile" },
-    { href: CONTACT.linkedin,    icon: <LinkedinIcon size={13} />,  label: "LinkedIn",         sub: "Profile",    external: true },
-    { href: CONTACT.github,      icon: <GithubIcon size={13} />,    label: "GitHub",           sub: "@shavd3",    external: true },
-    { href: CONTACT.instagram,   icon: <InstagramIcon size={13} />, label: "Instagram",        sub: "@shav.___.d.___.3", external: true },
-    { href: CONTACT.facebook,    icon: <FacebookIcon size={13} />,  label: "Facebook",         sub: "Personal",   external: true },
-    { href: CONTACT.photographyFb, icon: <FacebookIcon size={13} />, label: "Photography Page", sub: "Facebook",  external: true },
-  ];
 
   return (
     <SectionWrapper id="contact">
@@ -45,31 +34,55 @@ export default function Contact() {
 
             <p className="font-body text-grey-500 text-sm leading-loose mb-10 max-w-sm">
               Whether you have a project in mind, want to discuss a role, or are looking for a
-              lecturer — I&apos;d love to hear from you.
+              lecturer. I&apos;d love to hear from you.
             </p>
 
-            <div className="space-y-3">
-              {contactLinks.map(({ href, icon, label, sub, external }) => (
-                <a
-                  key={label + sub}
-                  href={href}
-                  target={external ? "_blank" : undefined}
-                  rel={external ? "noopener noreferrer" : undefined}
-                  className="flex items-center gap-4 text-grey-500 hover:text-white transition-colors duration-300 group py-1"
-                >
-                  <div className="w-8 h-8 border border-grey-800 group-hover:border-grey-600 flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:bg-grey-900">
+            {/* Direct contact */}
+            <div className="mb-8">
+              <p className="text-[9px] tracking-[0.35em] uppercase text-grey-700 font-body mb-3">Direct</p>
+              <div className="space-y-2">
+                {[
+                  { href: `mailto:${CONTACT.email}`,    icon: <Mail size={13} />, label: CONTACT.email,    sub: "Personal" },
+                  { href: `mailto:${CONTACT.emailIFS}`, icon: <Mail size={13} />, label: CONTACT.emailIFS, sub: "IFS R&D" },
+                  { href: `mailto:${CONTACT.emailIIT}`, icon: <Mail size={13} />, label: CONTACT.emailIIT, sub: "IIT" },
+                  { href: `tel:${CONTACT.phone.replace(/\s/g, "")}`, icon: <PhoneIcon size={13} />, label: CONTACT.phone, sub: "Mobile" },
+                ].map(({ href, icon, label, sub }) => (
+                  <a key={sub} href={href} className="flex items-center gap-3 text-grey-500 hover:text-white transition-colors duration-300 group py-0.5">
+                    <div className="w-7 h-7 border border-grey-800 group-hover:border-grey-600 flex items-center justify-center flex-shrink-0 transition-all duration-300">
+                      {icon}
+                    </div>
+                    <div>
+                      <p className="font-body text-sm leading-tight group-hover:text-grey-200 transition-colors duration-300">{label}</p>
+                      <p className="text-[9px] tracking-[0.2em] uppercase text-grey-700 font-body">{sub}</p>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            {/* Social links */}
+            <div>
+              <p className="text-[9px] tracking-[0.35em] uppercase text-grey-700 font-body mb-3">Social</p>
+              <div className="flex flex-wrap gap-2">
+                {[
+                  { href: CONTACT.linkedin,      icon: <LinkedinIcon size={14} />,  label: "LinkedIn" },
+                  { href: CONTACT.github,         icon: <GithubIcon size={14} />,    label: "GitHub" },
+                  { href: CONTACT.instagram,      icon: <InstagramIcon size={14} />, label: "Instagram" },
+                  { href: CONTACT.facebook,       icon: <FacebookIcon size={14} />,  label: "Facebook" },
+                  { href: CONTACT.photographyFb,  icon: <FacebookIcon size={14} />,  label: "Photography" },
+                ].map(({ href, icon, label }) => (
+                  <a
+                    key={label}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 border border-grey-800 hover:border-grey-600 text-grey-500 hover:text-white px-3 py-2 text-[11px] font-body tracking-wide transition-all duration-300 group"
+                  >
                     {icon}
-                  </div>
-                  <div>
-                    <p className="font-body text-sm group-hover:text-grey-200 transition-colors duration-300 leading-tight">
-                      {label}
-                    </p>
-                    <p className="text-[10px] tracking-[0.15em] uppercase text-grey-700 font-body">
-                      {sub}
-                    </p>
-                  </div>
-                </a>
-              ))}
+                    <span>{label}</span>
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
 
