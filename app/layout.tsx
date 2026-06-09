@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Inter } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -16,6 +18,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://shavin.dev"),
   title: "Shavin Dilsara Fernando — Software Engineer & Visiting Lecturer",
   description:
     "Senior Software Engineer at IFS R&D International. Visiting Lecturer at IIT. Photographer. IEEE published researcher. Based in Sri Lanka.",
@@ -67,6 +70,8 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col antialiased bg-black text-white">
         {children}
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

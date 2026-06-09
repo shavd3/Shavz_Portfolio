@@ -24,7 +24,7 @@ export default function SectionWrapper({
     <section
       id={id}
       ref={ref}
-      className={cn("px-6 md:px-12 lg:px-24 py-24 lg:py-32", className)}
+      className={cn("px-5 sm:px-8 md:px-12 lg:px-24 py-16 md:py-24 lg:py-32 scroll-mt-16", className)}
     >
       <motion.div
         initial={{ opacity: 0, y: 32 }}

@@ -4,7 +4,7 @@ import { CONTACT } from "@/lib/data";
 
 export default function Footer() {
   return (
-    <footer className="relative px-6 md:px-12 lg:px-24 pt-16 pb-10 overflow-hidden">
+    <footer className="relative px-5 sm:px-8 md:px-12 lg:px-24 pt-16 pb-10 overflow-hidden">
       {/* Top rule with monogram */}
       <div className="flex items-center gap-6 mb-14">
         <div className="flex-1 h-px bg-grey-800" />

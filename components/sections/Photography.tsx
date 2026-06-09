@@ -9,20 +9,20 @@ import SectionWrapper from "@/components/ui/SectionWrapper";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { PHOTOS } from "@/lib/data";
 
-// Grid layout: assign span sizes to create a compelling masonry feel
+// Grid layout: mobile-first (1 col each), masonry at md+
 const SPANS = [
-  "col-span-2 row-span-2", // 01 canon lens — featured tall
-  "col-span-1 row-span-1", // 02 tech flatlay
-  "col-span-1 row-span-1", // 03 calla lily
-  "col-span-1 row-span-2", // 04 night street — tall
-  "col-span-2 row-span-1", // 05 train promenade — wide
-  "col-span-1 row-span-2", // 06 rooftop sunset — tall
-  "col-span-2 row-span-1", // 07 city skyline — wide
-  "col-span-1 row-span-1", // 08 train overhead
-  "col-span-1 row-span-1", // 09 sea from train
-  "col-span-2 row-span-1", // 10 port city — wide
-  "col-span-1 row-span-1", // 11 blood moon
-  "col-span-1 row-span-1", // 12 colonial building
+  "col-span-1 row-span-1 md:col-span-2 md:row-span-2",
+  "col-span-1 row-span-1 md:col-span-1 md:row-span-1",
+  "col-span-1 row-span-1 md:col-span-1 md:row-span-1",
+  "col-span-1 row-span-1 md:col-span-1 md:row-span-2",
+  "col-span-1 row-span-1 md:col-span-2 md:row-span-1",
+  "col-span-1 row-span-1 md:col-span-1 md:row-span-2",
+  "col-span-1 row-span-1 md:col-span-2 md:row-span-1",
+  "col-span-1 row-span-1 md:col-span-1 md:row-span-1",
+  "col-span-1 row-span-1 md:col-span-1 md:row-span-1",
+  "col-span-1 row-span-1 md:col-span-2 md:row-span-1",
+  "col-span-1 row-span-1 md:col-span-1 md:row-span-1",
+  "col-span-1 row-span-1 md:col-span-1 md:row-span-1",
 ];
 
 export default function Photography() {
@@ -52,7 +52,7 @@ export default function Photography() {
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-3 md:grid-cols-4 auto-rows-[160px] md:auto-rows-[180px] gap-2">
+        <div className="grid grid-cols-2 md:grid-cols-4 auto-rows-[140px] md:auto-rows-[180px] gap-2">
           {PHOTOS.map((photo, i) => (
             <motion.button
               key={photo.id}
