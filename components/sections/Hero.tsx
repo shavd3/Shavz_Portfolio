@@ -1,9 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Download, ArrowDown } from "lucide-react";
+import { Download, ArrowDown, Mail } from "lucide-react";
 import dynamic from "next/dynamic";
-import { GithubIcon, LinkedinIcon } from "@/components/ui/SocialIcons";
+import { GithubIcon, LinkedinIcon, InstagramIcon, FacebookIcon } from "@/components/ui/SocialIcons";
 import { CONTACT } from "@/lib/data";
 
 const ParticleBackground = dynamic(() => import("@/components/ui/ParticleBackground"), {
@@ -133,26 +133,27 @@ export default function Hero() {
         </motion.div>
 
         {/* Social icons */}
-        <motion.div variants={stagger.item} transition={ITEM_TRANSITION} className="flex items-center gap-7">
-          <a
-            href={CONTACT.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="GitHub"
-            className="text-grey-600 hover:text-grey-200 transition-colors duration-300"
-          >
-            <GithubIcon size={18} />
-          </a>
-          <div className="w-px h-4 bg-grey-800" />
-          <a
-            href={CONTACT.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="LinkedIn"
-            className="text-grey-600 hover:text-grey-200 transition-colors duration-300"
-          >
-            <LinkedinIcon size={18} />
-          </a>
+        <motion.div variants={stagger.item} transition={ITEM_TRANSITION} className="flex items-center gap-5">
+          {[
+            { href: CONTACT.github,      icon: <GithubIcon size={17} />,    label: "GitHub" },
+            { href: CONTACT.linkedin,    icon: <LinkedinIcon size={17} />,  label: "LinkedIn" },
+            { href: CONTACT.instagram,   icon: <InstagramIcon size={17} />, label: "Instagram" },
+            { href: CONTACT.facebook,    icon: <FacebookIcon size={17} />,  label: "Facebook" },
+            { href: `mailto:${CONTACT.email}`, icon: <Mail size={16} />,    label: "Email" },
+          ].map(({ href, icon, label }, i, arr) => (
+            <span key={label} className="flex items-center gap-5">
+              <a
+                href={href}
+                target={href.startsWith("http") ? "_blank" : undefined}
+                rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+                aria-label={label}
+                className="text-grey-600 hover:text-grey-200 transition-colors duration-300"
+              >
+                {icon}
+              </a>
+              {i < arr.length - 1 && <div className="w-px h-4 bg-grey-800" />}
+            </span>
+          ))}
         </motion.div>
       </motion.div>
 
